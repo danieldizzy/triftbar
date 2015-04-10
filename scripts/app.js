@@ -11,13 +11,13 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
-        templateUrl: 'views/main.html'        
-      })
-      .when('/', {
         templateUrl: 'views/browse.html'        
       })
-      .when('/', {
-        templateUrl: 'views/main.html'        
+      .when('/post', {
+        templateUrl: 'views/post.html'        
+      })
+      .when('/edit', {
+        templateUrl: 'views/edit.html'        
       })
       .otherwise({
         redirectTo: '/'
