@@ -14,7 +14,7 @@ var app = angular
         templateUrl: 'views/main.html'        
       })  
       .when('/post', {
-        templateUrl: 'views/browse.html'        
+        templateUrl: 'views/post.html'        
       })
 
       .when('/edit', {
