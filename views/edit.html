@@ -1,1 +1,19 @@
-<h2> Edit Task</h2>
+<div class="container">
+<div class="row title">
+	<div class="col-md-6 col-md-offset-3">
+
+		<form ng-submit="updateItem(selectedItem)">
+			<input type="text" ng-model="selectedItem.title" class="form-control" placeholder="Item title" required>
+			<br>
+
+			<textarea ng-model="selectedItem.description" class="form-control" placeholder="Describe what you want to sell" required>
+			</textarea>
+			<br>
+
+			<input type="number" ng-model="selectedItem.total" class="form-control" placeholder="What is your bargain?" required><br>
+
+			<input type="submit" value="Update Item" class="btn btn-primary"> 
+		</form>
+	</div>
+</div>
+</div>
