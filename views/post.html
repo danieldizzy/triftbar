@@ -1,19 +1,14 @@
 <div class="container">
-<div class="row title">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="row title">
+		<div class="col-md-6 col-md-offset-3">
 
-		<form ng-submit="postItem(item)">
-			<input type="text" ng-model="item.title" class="form-control" placeholder="Item title" required>
-			<br>
+			<form ng-submit="postTask(task)">              
+		      <input type="text" ng-model="task.title" class="form-control" placeholder="Task title" required><br>             
+		      <textarea ng-model="task.description" class="form-control" placeholder="Describe what you need done" required></textarea><br>
+		      <input type="number" ng-model="task.total" class="form-control" placeholder="How much will you pay?" required><br>
+		      <input type="submit" value="Post" class="btn btn-warning">
+		    </form>
 
-			<textarea ng-model="item.description" class="form-control" placeholder="Describe what you want to sell" required>
-			</textarea>
-			<br>
-
-			<input type="number" ng-model="item.total" class="form-control" placeholder="What is your bargain?" required><br>
-
-			<input type="submit" value="Post" class="btn btn-primary"> 
-		</form>
-	</div>
-</div>
+		</div>
+	</div>	
 </div>
