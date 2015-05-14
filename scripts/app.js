@@ -8,7 +8,7 @@ var app = angular
     'firebase',
     'toaster'
   ])
-  .constant('FURL', 'https://task-ninja.firebaseio.com/')  
+  .constant('FURL', 'https://triftbar.firebaseio.com/')  
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
@@ -16,15 +16,15 @@ var app = angular
       })
       .when('/browse', {
         templateUrl: 'views/browse.html',
-        controller: 'TaskController'     
+        controller: 'ItemController'     
       })
       .when('/post', {
         templateUrl: 'views/post.html',
-        controller: 'TaskController'
+        controller: 'ItemController'
       })
-      .when('/edit/:taskId', {
+      .when('/edit/:itemId', {
         templateUrl: 'views/edit.html',
-        controller: 'TaskController'
+        controller: 'ItemController'
       })
       .when('/register', {
         templateUrl: 'views/register.html',

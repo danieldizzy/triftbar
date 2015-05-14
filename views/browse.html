@@ -9,21 +9,21 @@
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 							</div>
-				      		<input type="text" ng-model="searchTask" class="form-control" placeholder="Search">
+				      		<input type="text" ng-model="searchItem" class="form-control" placeholder="Search">
 				    	</div>	
 					</div>		
 					
 					<!-- TASK LIST -->	
-					<a ng-repeat="task in tasks | filter: searchTask | orderBy: 'title'" ng-href="#/edit/{{task.$id}}">
+					<a ng-repeat="item in items | filter: searchItem | orderBy: 'title'" ng-href="#/edit/{{item.$id}}">
 						<div class="list-group-item">					        
 					        <div class="row-content">
-					            <h4 class="list-group-item-heading">{{task.title | limitTo:25}}{{ task.title.length > 25? "..." : ""}}</h4>
+					            <h4 class="list-group-item-heading">{{item.title | limitTo:25}}{{ item.title.length > 25? "..." : ""}}</h4>
 					            <span class="list-group-item-text">
-					            	{{task.description}}
+					            	{{item.description}}
 					            </span>		            
 					        </div>
 					        <div class="payment">
-					        	<div>${{task.total}}</div>
+					        	<div>&yen{{item.total}}</div>
 					        	<!-- <span class="label status {{task.status}}">{{task.status}}</span> -->
 					        </div>
 					    </div>		    

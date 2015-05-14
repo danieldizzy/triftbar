@@ -1,29 +1,29 @@
 'use strict';
 
-app.controller('TaskController', function($scope, $firebase, FURL, $location, $routeParams, toaster) {
+app.controller('ItemController', function($scope, $firebase, FURL, $location, $routeParams, toaster) {
 
 	var ref = new Firebase(FURL);
-	var fbTasks = $firebase(ref.child('tasks')).$asArray();
-	var taskId = $routeParams.taskId;
+	var fbItems = $firebase(ref.child('items')).$asArray();
+	var itemId = $routeParams.itemId;
 
-	$scope.tasks = fbTasks;
+	$scope.items = fbItems;
 	
-	if(taskId) {
-		$scope.selectedTask = getTask(taskId);
+	if(itemId) {
+		$scope.selectedItem = getItem(itemId);
 	}
 
-	function getTask(taskId) {
-		return $firebase(ref.child('tasks').child(taskId)).$asObject();
+	function getItem(itemId) {
+		return $firebase(ref.child('items').child(itemId)).$asObject();
 	};
 
-	$scope.postTask = function(task) {
-		$scope.tasks.$add(task);
+	$scope.postItem = function(item) {
+		$scope.items.$add(item);
 		toaster.pop('success', 'Task created successfully.');
 		$location.path('/');
 	};	
 
-	$scope.updateTask = function(task) {
-		$scope.selectedTask.$save(task);
+	$scope.updateItem = function(item) {
+		$scope.selectedItem.$save(item);
 		toaster.pop('success', "Task is updated.");
 		$location.path('/');
 	};
